@@ -42,7 +42,7 @@ services:
       # /opt/node_modules location. Thanks to PR from @brnluiz
       - notused:/opt/app/node_modules
     networks:
-      - boilerplate-network
+      - skymath-network
 
   web-client:
     build:

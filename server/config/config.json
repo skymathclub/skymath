@@ -2,7 +2,7 @@
   "development": {
     "username": "dbuser",
     "password": "dbuserpwd",
-    "database": "boilerplate_db",
+    "database": "skymath_db",
     "host": "mysql-db",
     "dialect": "mysql"
   }

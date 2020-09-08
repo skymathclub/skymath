@@ -1,19 +1,20 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
+var express = require('express');
+var router = express.Router();
 const Sequelize = require("sequelize");
-const dbConfig = require("./config/config.json").development;
-const User = require("./models").User;
+const dbConfig = require("../config/config.json").development;
+const User = require("../models").User;
 
 connectToDatabase();
 
-app.use(cors());
-
-app.listen(5000, () => console.log("The node.js app is listening on port 5000."));
-
-var indexRouter = require("./routes/index");
-
-app.use("/", indexRouter);
+router.get("/", async (req, res, next) => {
+  try {
+    const user = await User.findById(1);
+    const response = { message: `This response came from the node.js app. User ${user.username} is on the database.` };
+    res.send(response);
+  } catch (error) {
+    res.status(422).send(error);
+  }
+});
 
 function connectToDatabase() {
   const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
@@ -58,3 +59,6 @@ function connectToDatabase() {
       console.log("Unable to connect to the database:", err);
     });
 }
+
+
+module.exports = router;

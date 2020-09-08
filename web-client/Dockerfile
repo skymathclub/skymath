@@ -11,7 +11,7 @@ RUN npm install && npm cache clean --force
 ENV PATH /opt/node_modules/.bin:$PATH
 
 WORKDIR /opt/app
-COPY . /opt/app
+ADD . /opt/app
 
 CMD ["npm", "start"]
 

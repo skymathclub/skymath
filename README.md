@@ -1,6 +1,6 @@
 # Docker MySQL Node Sequelize React project
 
-This project is based on the [boilerplate project](https://github.com/rgaino/docker-node-react-mysql-boilerplate/tree/master/web-client):
+This project is based on the [boilerplate project](https://github.com/rgaino/docker-node-react-mysql-boilerplate):
 
 1. Starts a MySQL server container based on the [official image](https://hub.docker.com/_/mysql/),
 2. Starts a [Node.js 10.8.0](https://hub.docker.com/_/node/) app that waits for the database to become responsive, and run all migrations and seeds if necessary,
